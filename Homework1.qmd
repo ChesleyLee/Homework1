@@ -1,0 +1,60 @@
+---
+title: "Homework 1"
+author: "Chenxi Li & 22212393"
+date: "`r Sys.Date()`"
+format:
+  pdf:
+    toc: true
+    toc-title: '**Contents**'
+    embed-resources: true
+    fontsize: 1.2em
+---
+
+## Introduction
+
+This document provides a plot based on a dataset from an R package and some descriptive statistics about the data used.
+
+## Dataset and Plot
+
+The dataset used in this plot is the `ggplot2` package's `mpg` dataset. The `mpg` dataset contains observations collected by the US Environmental Protection Agency on 38 models of cars. It includes variables such as manufacturer, model, engine displacement, year, number of cylinders, transmission, drive type, and fuel economy (in city and highway driving).
+
+## Plot
+
+Below is a scatter plot showing the relationship between engine displacement (in liters) and highway miles per gallon. We've added colors for each manufacturer and labels to make it visually appealing.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+library(ggplot2)
+data(mpg)
+
+ggplot(mpg, aes(x = displ, y = hwy, color = manufacturer)) +
+  geom_point(size = 3, alpha = 0.7) +
+  labs(title = "Engine Displacement vs. Highway MPG",
+       subtitle = "Based on the mpg dataset from ggplot2 package",
+       x = "Engine Displacement (L)",
+       y = "Highway Miles per Gallon (MPG)",
+       color = "Manufacturer") +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(face = "bold", size = 14, color = "darkblue"),
+    plot.subtitle = element_text(face = "italic", size = 12, color = "darkred"),
+    axis.title = element_text(face = "bold", size = 12),
+    legend.title = element_text(face = "bold", size = 12),
+    legend.position = "bottom"
+  )
+```
+
+## Description of the Plot
+
+The scatter plot above shows the relationship between engine displacement and highway miles per gallon. As the engine displacement increases, the highway miles per gallon tend to decrease. This is expected as larger engines typically consume more fuel. Different colors represent different manufacturers, aiding in identifying the distribution of data points for each manufacturer.
+
+## Descriptive Statistics
+
+Here are some descriptive statistics of the variables used in the plot:
+
+```{r}
+#| echo: false
+summary(mpg[, c("displ", "hwy")])
+```
