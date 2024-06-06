@@ -1,11 +1,11 @@
 ---
-title: \textcolor{blue}{Homework 1}
+title: "Homework 1"
 author: "Chenxi Li & 22212393"
 date: "`r Sys.Date()`"
 format:
   pdf:
     toc: true
-    toc-title: '**Contents**'
+    toc-title: \textcolor{olive}{Contents}
     embed-resources: true
     fontsize: 1.2em
     pagebreaks: true  
@@ -13,19 +13,19 @@ format:
 
 \newpage
 
-## Introduction
+## \textcolor{olive}{Introduction}
 
 This document provides a plot based on a dataset from an R package.
 
-## Dataset
+## \textcolor{olive}{Dataset}
 
 The dataset used in this plot is the `ggplot2` package's `mpg` dataset. The `mpg` dataset contains observations collected by the *US Environmental Protection Agency* on *38* models of cars.
 
 It includes variables such as *manufacturer*, *model*, *engine displacement*, *year*, *number of cylinders*, *transmission*, *drive type*, and *fuel economy (in city and highway driving).*
 
-## Plot
+## \textcolor{olive}{Plot}
 
-Below is a scatter plot showing the relationship between engine displacement (in liters) and highway miles per gallon. We've added colors for each manufacturer and labels to make it visually appealing.
+Below is a scatter plot showing the relationship between engine displacement (in liters) and highway miles per gallon. I've added colors for each manufacturer and labels to make it visually appealing.
 
 ```{r}
 #| echo: false
@@ -52,13 +52,13 @@ ggplot(mpg, aes(x = displ, y = hwy, color = manufacturer)) +
 
 ```
 
-## Description of the Plot
+## \textcolor{olive}{Description of the Plot}
 
-### \textcolor{blue}{Overall Trend}
+### \textcolor{olive}{Overall Trend}
 
 -   **Negative correlation:** Overall, highway MPG shows a decreasing trend with increasing engine displacement. This indicates that larger engines are generally less efficient and require more fuel.
 
-### \textcolor{blue}{Anylasis of Manufactures}
+### \textcolor{olive}{Anylasis of Manufactures}
 
 -   **Manufacturer differences:** Different manufacturers have different MPG on the highway for the same engine displacement. For example, Toyota and Honda models exhibit higher MPG for smaller displacements (2-3 liters).
 
@@ -70,6 +70,6 @@ ggplot(mpg, aes(x = displ, y = hwy, color = manufacturer)) +
 
     -   *Volkswagen:* Mainly concentrated in the displacement range of less than 3 liters, MPG performance is also relatively high.
 
-### \textcolor{blue}{Conclusion}
+### \textcolor{olive}{Conclusion}
 
 -   According to the data, if consumers are concerned about fuel economy, they should consider choosing a model with a smaller displacement (2-3 liters) from Toyota or Honda.
